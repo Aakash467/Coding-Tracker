@@ -17,7 +17,7 @@ app.use('/api/users', userRoutes);
 app.use('/api/stats', statsRoutes);
 
 const PORT = process.env.PORT || 5001;
-
+app.get('/api/test', (req, res) => res.send('API is working'));
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
