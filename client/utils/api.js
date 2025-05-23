@@ -1,6 +1,6 @@
 // import axios from "axios";
 
-const API_URL = "https://coding-tracker.onrender.com";
+const API_URL = "https://coding-tracker.onrender.com/api";
 
 // export const fetchUserStats = async (userId) => {
 //   try {
