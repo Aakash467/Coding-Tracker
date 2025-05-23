@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/aakash467/CodingTracker.git"
+    "url": "https://github.com/Aakash467/CodingTracker.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
