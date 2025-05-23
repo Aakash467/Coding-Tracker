@@ -3,6 +3,7 @@ import axios from 'axios';
 import AuthContext from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import bgImage from '../src/assets/l5.jpg';
+import API_URL from '../utils/api';
 
 const StatCard = ({ title, children, borderColor = 'border-indigo-200', icon }) => (
   <div className={`relative bg-white/90 backdrop-blur-sm border-l-4 ${borderColor} rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5`}>
@@ -37,7 +38,7 @@ export default function Dashboard() {
 
   const fetchStats = async () => {
     try {
-      const response = await axios.get('http://localhost:5001/api/stats', {
+      const response = await axios.get(`${API_URL}/stats`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setStats(response.data);

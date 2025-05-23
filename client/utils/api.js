@@ -1,6 +1,6 @@
 // import axios from "axios";
 
-// const API_URL = "http://localhost:5001/api";
+const API_URL = "http://localhost:5001/api";
 
 // export const fetchUserStats = async (userId) => {
 //   try {
@@ -11,3 +11,5 @@
 //     return null;
 //   }
 // };
+
+export default API_URL;

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import AuthContext from '../context/AuthContext';
 import bgImage from '../src/assets/l5.jpg';
+import API_URL from '../utils/api';
 
 export default function Register() {
   const [formData, setFormData] = useState({
@@ -25,7 +26,7 @@ export default function Register() {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5001/api/auth/register', formData);
+      const response = await axios.post(`${API_URL}/auth/register`, formData);
       navigate('/login');
     } catch (error) {
       alert('Registration failed! Try again.');

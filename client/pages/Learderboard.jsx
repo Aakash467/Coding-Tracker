@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import AuthContext from '../context/AuthContext';
 import axios from 'axios';
 import bgImage from '../src/assets/l5.jpg';
+import API_URL from '../utils/api';
 
 const PLATFORM_ICONS = {
   leetcode: '💻',
@@ -23,7 +24,7 @@ export default function Leaderboard() {
 
   const fetchStats = async () => {
     try {
-      const response = await axios.get('http://localhost:5001/api/stats', {
+      const response = await axios.get(`${API_URL}/stats`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setStats(response.data);

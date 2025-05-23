@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import AuthContext from '../context/AuthContext';
 import axios from 'axios';
 import bgImage from '../src/assets/l5.jpg';
+import API_URL from '../utils/api';
 
 // Reusable Input Component
 const PlatformInput = ({ label, name, value, onChange, currentValue, icon }) => (
@@ -49,6 +50,14 @@ export default function Profile() {
     }
   }, [user]);
 
+  if (!user) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-100 text-gray-600">
+        Loading profile...
+      </div>
+    );
+  }
+
   const handleChange = (e) => {
     setUsernames(prev => ({
       ...prev,
@@ -62,7 +71,7 @@ export default function Profile() {
     setStatus({ type: null, message: '' });
 
     try {
-      await axios.put('http://localhost:5001/api/users/profile', usernames, {
+      await axios.put(`${API_URL}/users/profile`, usernames, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setStatus({ type: 'success', message: 'Profile updated successfully!' });

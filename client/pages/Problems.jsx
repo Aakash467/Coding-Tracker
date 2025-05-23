@@ -55,7 +55,7 @@ export default function Problems() {
             icon="💻"
             borderColor="border-orange-400"
             title="Visit LeetCode Daily Challenge"
-            link="https://leetcode.com/explore/challenge/card/30-day-leetcoding-challenge/"
+            link="https://leetcode.com/problemset/all"
           />
 
           <ProblemCard

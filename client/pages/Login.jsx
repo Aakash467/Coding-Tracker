@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import AuthContext from '../context/AuthContext';
 import axios from 'axios';
 import bgImage from '../src/assets/l5.jpg';
+import API_URL from '../utils/api';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -19,7 +20,7 @@ export default function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5001/api/auth/login', { email, password });
+      const response = await axios.post(`${API_URL}/auth/login`, { email, password });
       login(response.data.token, response.data.user);
       navigate('/');
     } catch (error) {
